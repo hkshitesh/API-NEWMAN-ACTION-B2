@@ -32,6 +32,8 @@ public class UserController {
         return ResponseEntity.created(URI.create("/api/users/" + created.getId())).body(created);
     }
 
+    
+
     @PutMapping("/{id}")
     public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user) {
         if (!svc.exists(id)) return ResponseEntity.notFound().build();
